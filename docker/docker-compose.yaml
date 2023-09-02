@@ -1,0 +1,13 @@
+services:
+
+  llama-api:
+    image: llama-api
+    # command: sleep 5
+    build:
+      context: ../
+      dockerfile: ./docker/llama-api/Dockerfile
+    ports:
+      - 9000
+    volumes:
+      - ../llama-api:/llama-api
+      - ./llama-api/entrypoint.sh:/entrypoint.sh 
